@@ -1,0 +1,18 @@
+server:
+  port: 8002
+spring:
+  security:
+    user:
+      name: test
+      password: 1212
+eureka:
+  server:
+  # 关闭自我保护
+    enable-self-preservation: false
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@localhost:8002/eureka,http://${spring.security.user.name}:${spring.security.user.password}@localhost:8001/eureka,http://${spring.security.user.name}:${spring.security.user.password}@localhost:8003/eureka
+  dashboard:
+    path: /register

@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: eurekaServer
+  cloud:
+    nacos:
+      config:
+        server-addr: 39.108.217.39:8847,39.108.217.39:8848,39.108.217.39:8849
+        file-extension: yaml
+        context-path: tckk-nacos
